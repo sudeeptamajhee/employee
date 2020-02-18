@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">Employee Details</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Employee Name</th>
+                    <th>Employee Salary</th>
+                    <th>Employee Age</th>
+                    <th>Employee Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of allEmployees | paginate: {itemsPerPage: 5, currentPage: p}">
+                    <td>{{e.id}}</td>
+                    <td>{{e.employee_name}}</td>
+                    <td>{{e.employee_salary}}</td>
+                    <td>{{e.employee_age}}</td>
+                    <td><img src="{{e.profile_image}}" class="rounded"/></td>
+                </tr>
+                <tr *ngIf="error">
+                    <td colspan="5">{{error.message}}</td>
+                </tr>
+            </tbody>
+            <caption *ngIf="allEmployees" class="text-center"><pagination-controls (pageChange)="p=$event"></pagination-controls></caption>
+        </table>
+    </div>
+</div>

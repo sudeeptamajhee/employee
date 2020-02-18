@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">Find Employee</div>
+    <div class="card-body">
+        <form #empForm="ngForm" (ngSubmit)="findEmployeeById(empForm)">
+            <div class="form-group">
+                <label for="id">Employee Id:</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Id" 
+                        id="id" name="id" ngModel>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-sm" value="Find">
+                    <span class="glyphicon glyphicon-search"></span> Find
+                </button>
+            </div>
+        </form>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Employee Name</th>
+                    <th>Employee Salary</th>
+                    <th>Employee Age</th>
+                    <th>Employee Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="employee">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.employee_name}}</td>
+                    <td>{{employee.employee_salary}}</td>
+                    <td>{{employee.employee_age}}</td>
+                    <td><img src="{{employee.profile_image}}" class="rounded"/></td>
+                </tr>
+                <tr *ngIf="error">
+                    <td colspan="5">{{error.message}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

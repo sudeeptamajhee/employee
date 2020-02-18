@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">New Employee</div>
+    <div class="card-body">
+        <form (ngSubmit)="createEmployee()">
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="id">Employee Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter Employee Name" 
+                            [(ngModel)]="employee.employee_name" name="employee_name"> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="id">Employee Salary:</label>
+                    <input type="number" class="form-control" placeholder="Enter Employee Salary" 
+                            [(ngModel)]="employee.employee_salary" name="employee_salary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="id">Employee Age:</label>
+                    <input type="number" class="form-control" placeholder="Enter Employee Age" 
+                            [(ngModel)]="employee.employee_age" name="employee_age">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <label for="id">Employee Image:</label>
+                    <input type="text" class="form-control" placeholder="Enter Employee Image" 
+                            [(ngModel)]="employee.profile_image" name="profile_image" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-5">
+                    <button type="submit" class="btn btn-success btn-sm" value="Create">
+                        <span class="glyphicon glyphicon-search"></span> Create
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-12" *ngIf="error">
+                    <td colspan="5">{{error.message}}</td>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-12" *ngIf="message">
+                    <td colspan="5">{{message}}</td>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+  body {
+	  font-size: small;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .footer {
+    text-align: center;
+    align-items: baseline;
+    line-height: 20px;
+    height: 60px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 400;
+  }
